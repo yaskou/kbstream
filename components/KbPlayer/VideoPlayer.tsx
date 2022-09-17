@@ -5,6 +5,7 @@ type Props = {
   src: string
 }
 
+// eslint-disable-next-line react/display-name
 const VideoPlayer = forwardRef<HTMLVideoElement, Props>((props, ref) => (
   <Box
     component="video"
