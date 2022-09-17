@@ -1,0 +1,26 @@
+import { Box, LinearProgress } from '@mui/material'
+import useLogic from './logic'
+import VideoPlayer from './VideoPlayer'
+
+type Props = {
+  src: string
+}
+
+const KbPlayer = ({ src }: Props) => {
+  const { ref, progress, onHover, onUnHover } = useLogic()
+
+  return (
+    <Box
+      onMouseEnter={onHover}
+      onMouseLeave={onUnHover}
+      display="flex"
+      flexDirection="column"
+      sx={{ aspectRatio: '16 / 9' }}
+    >
+      <VideoPlayer ref={ref} src={src} />
+      <LinearProgress variant="determinate" value={progress} />
+    </Box>
+  )
+}
+
+export default KbPlayer
