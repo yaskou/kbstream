@@ -8,29 +8,32 @@ const useLogic = () => {
     const socket = io()
 
     socket.on('connect', async () => {
-      const stream = await navigator.mediaDevices.getUserMedia({
-        video: true
-      })
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: true
+        })
 
-      setInterval(() => {
-        const recorder = new MediaRecorder(stream)
+        setInterval(() => {
+          const recorder = new MediaRecorder(stream)
 
-        recorder.ondataavailable = evt => {
-          const reader = new FileReader()
-  
-          reader.onload = evt => {
-            socket.emit('stream', evt.target?.result as string)
+          recorder.ondataavailable = evt => {
+            const reader = new FileReader()
+
+            reader.onload = evt => {
+              socket.emit('stream', evt.target?.result as string)
+            }
+
+            reader.readAsDataURL(evt.data)
           }
-  
-          reader.readAsDataURL(evt.data)
-        }
 
-        recorder.start()
+          recorder.start()
 
-        setTimeout(() => {
-          recorder.stop()
-        }, 3000)
-      }, 10000)
+          setTimeout(() => {
+            recorder.stop()
+          }, 3000)
+        }, 10000)
+      }
+      catch { }
     })
 
     let chunks = [...base64s]
