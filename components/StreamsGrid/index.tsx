@@ -6,9 +6,9 @@ const StreamsGrid = () => {
   const { base64s } = useLogic()
 
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 4, md: 6 }}>
       {base64s.map(base64 => (
-        <Grid item key={base64}>
+        <Grid item xs={2} sm={2} md={2} key={base64}>
           <KbPlayer src={base64} />
         </Grid>
       ))}
