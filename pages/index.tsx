@@ -1,4 +1,4 @@
-import { Toolbar } from '@mui/material'
+import { Container, Toolbar } from '@mui/material'
 import type { NextPage } from 'next'
 import Header from '../components/Header'
 import StreamsGrid from '../components/StreamsGrid'
@@ -8,7 +8,9 @@ const Home: NextPage = () => {
     <>
       <Header />
       <Toolbar />
-      <StreamsGrid />
+      <Container sx={{ py: 2 }}>
+        <StreamsGrid />
+      </Container>
     </>
   )
 }
