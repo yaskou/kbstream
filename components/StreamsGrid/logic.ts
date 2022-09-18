@@ -38,7 +38,7 @@ const useLogic = () => {
 
     let chunks = [...base64s]
     socket.on('stream', (base64: string) => {
-      chunks = [...chunks, base64]
+      chunks = [...chunks.length > 14 ? chunks.slice(1, 15) : chunks, base64]
       setBase64s(chunks)
     })
   }, [])
