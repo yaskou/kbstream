@@ -1,6 +1,7 @@
 import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
 import type { AppProps } from 'next/app'
 
+// Default theme is dark theme
 const darkTheme = createTheme({
   palette: {
     mode: 'dark'
