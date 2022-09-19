@@ -11,8 +11,8 @@ const StreamsGrid = () => {
       spacing={{ xs: 2, md: 3 }}
       columns={{ xs: 2, sm: 4, md: 6 }} // Change the number of video in a column by breakpoint
     >
-      {base64s.map((base64, index) => (
-        <Grid item xs={2} sm={2} md={2} key={index}>
+      {base64s.map(base64 => (
+        <Grid item xs={2} sm={2} md={2} key={base64}>
           <KbPlayer src={base64} />
         </Grid>
       ))}
