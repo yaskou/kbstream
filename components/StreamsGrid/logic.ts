@@ -41,7 +41,7 @@ const useLogic = () => {
       catch { }
     })
 
-    let chunks = [...base64s]
+    let chunks: string[] = []
     socket.on('stream', (base64: string) => {
 
       /*--------------------------------
