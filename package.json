@@ -6,7 +6,8 @@
     "dev": "ts-node -P tsconfig.server.json server/index.ts",
     "build": "next build && tsc -P tsconfig.server.json",
     "start": "NODE_ENV=production node build/index.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
