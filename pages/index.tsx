@@ -1,7 +1,7 @@
-import { Container, Toolbar } from '@mui/material'
-import type { NextPage } from 'next'
-import Header from '../components/Header'
-import StreamsGrid from '../components/StreamsGrid'
+import { Container, Toolbar } from '@mui/material';
+import type { NextPage } from 'next';
+import Header from '../components/Header';
+import StreamsGrid from '../components/StreamsGrid';
 
 const Home: NextPage = () => {
   return (
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
         <StreamsGrid />
       </Container>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

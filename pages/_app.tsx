@@ -1,12 +1,12 @@
-import { createTheme, CssBaseline, ThemeProvider } from '@mui/material'
-import type { AppProps } from 'next/app'
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
+import type { AppProps } from 'next/app';
 
 // Default theme is dark theme
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark'
-  }
-})
+    mode: 'dark',
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <CssBaseline />
       <Component {...pageProps} />
     </ThemeProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
